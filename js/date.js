@@ -1,6 +1,6 @@
 //? = 20 de enero martes /2022 16:51:08 hora estandar de arg
 
-/*
+
 function formatearFecha(fechaTimestamp){
 
     const fechaTimestamp = new Date(fechaTimestamp)//corregir la linea esta, que esta tipo 1:30 del video o un cachito mas para atras
@@ -21,7 +21,7 @@ function formatearFecha(fechaTimestamp){
     return `${dia}/${mes}/${año}`
 }
 
-formatearFecha(fechaTimestamp)*/
+formatearFecha(1642708268000)
 
 const fecha = new Date(1642708268000)
 //la forma que le gusta al profesor para usar
@@ -48,24 +48,24 @@ function calcularDiferenciaFechas(fechaAnterior){
     let diffDias = Math.floor(diff / 1000 / 60 / 60 / 24); //redondeamos para que quede bien los dias, solo la parte entera, no la parte decimal
 
     if(diffDias <= 30){
-        return `Hace ${diffDias} ${diffDias > 1 ? 'dias' : 'dia'}` //dice que devuelve dia si es 1 o si es mayor a 1 devuelve la palabra dias
+        return `Pasaron ${diffDias} ${diffDias > 1 ? 'dias' : 'dia'}` //dice que devuelve dia si es 1 o si es mayor a 1 devuelve la palabra dias
     }
 
     let diffMeses = Math.floor(diffDias / 30)
 
     //tambien se podria poner dias y meses juntos, ver de implementar eso mas adelante
     if(diffMeses < 12){
-        return `Hace ${diffMeses} ${diffMeses > 1 ? 'meses' : 'mes'}`
+        return `Pasaron ${diffMeses} ${diffMeses > 1 ? 'meses' : 'mes'}`
     }
 
     let diffAños =  Math.floor(diffMeses /12)
     let mesesRestantes = diffMeses % 12 //ahi nos quedariamos con el resto, osea con el sobrante de los meses que teniamos menos el año
 
     if(!mesesRestantes){ //pregunta si los mese restantes es = 0
-        return `Hace ${diffAños} ${diffAños > 1 ? 'años' : 'año'}`
+        return `Pasaron ${diffAños} ${diffAños > 1 ? 'años' : 'año'}`
     }
 
-    return `Hace ${diffAños} ${diffAños > 1 ? 'años' : 'año'} y ${mesesRestantes} ${mesesRestantes > 1 ? 'meses' : 'mes'} restantes`
+    return `Pasaron ${diffAños} ${diffAños > 1 ? 'años' : 'año'} y ${mesesRestantes} ${mesesRestantes > 1 ? 'meses' : 'mes'}`
 }
 
 const diferencia = calcularDiferenciaFechas(1626665685000)
@@ -84,7 +84,7 @@ function calcularDiferenciaFechas(fechaAnterior) {
     const anios = Math.floor(meses / 12);
 
     if (anios > 0) {
-        return `Hace ${anios} año${anios > 1 ? 's' : ''}`;
+        return `Pasaron ${anios} año${anios > 1 ? 's' : ''}`;
     } else if (meses > 0) {
         return `Hace ${meses} mes${meses > 1 ? 'es' : ''}`;
     } else if (dias > 0) {
